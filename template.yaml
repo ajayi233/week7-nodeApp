@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  MyDynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: MyWeek7Table
+      BillingMode: PAY_PER_REQUEST  # Or PROVISIONED with ReadCapacityUnits and WriteCapacityUnits
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+
+Outputs:
+  TableName:
+    Description: "Name of the DynamoDB table"
+    Value: !Ref MyDynamoDBTable
+    Export:
+      Name: !Sub "${AWS::StackName}-TableName"
+      
+  TableArn:
+    Description: "ARN of the DynamoDB table"
+    Value: !GetAtt MyDynamoDBTable.Arn
+    Export:
+      Name: !Sub "${AWS::StackName}-TableArn"

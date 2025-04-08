@@ -1,0 +1,343 @@
+/* Base Styles */
+:root {
+    /* --primary-color: #5c6ac4; */
+    --primary-color: dodgerblue;
+    --secondary-color: #6b7280;
+    --accent-color: #8b5cf6;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --light-color: #f3f4f6;
+    --dark-color: #1f2937;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    /* background-color: #f9fafb; */
+    background-color: var(--dark-color);
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header Styles */
+  .site-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .logo i {
+    margin-right: 10px;
+    font-size: 1.8rem;
+  }
+  
+  /* Main Content */
+  main {
+    padding: 2rem 0;
+  }
+  
+  .todo-section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin: 3rem;
+  }
+  
+  .app-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .app-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .stats {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+  }
+  
+  /* Form Styles */
+  .todo-form-container {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--light-color);
+  }
+  
+  .todo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(92, 106, 196, 0.2);
+  }
+  
+  textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #4c58a6;
+  }
+  
+  .btn-toggle, .btn-delete {
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 50%;
+  }
+  
+  .btn-toggle:hover {
+    background-color: var(--light-color);
+  }
+  
+  .btn-delete:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+  }
+  
+  /* Todo List Styles */
+  .todo-list-container {
+    margin-bottom: 2rem;
+  }
+  
+  .todo-list-container h2 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-color);
+  }
+  
+  .empty-list {
+    color: var(--secondary-color);
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .todo-list {
+    list-style: none;
+  }
+  
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    background-color: var(--light-color);
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+  }
+  
+  .todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+  
+  .priority-low {
+    border-left-color: var(--success-color);
+  }
+  
+  .priority-medium {
+    border-left-color: var(--warning-color);
+  }
+  
+  .priority-high {
+    border-left-color: var(--danger-color);
+  }
+  
+  .todo-content {
+    flex: 1;
+  }
+  
+  .todo-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+  }
+  
+  .todo-description {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .todo-meta {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+  }
+  
+  .priority-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 12px;
+    background-color: var(--light-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  
+  .todo-actions {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .icon-circle:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f111";
+    font-weight: 400;
+    color: var(--secondary-color);
+  }
+  
+  .icon-check:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f058";
+    font-weight: 900;
+    color: var(--success-color);
+  }
+  
+  .icon-trash:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f1f8";
+    font-weight: 900;
+    color: var(--danger-color);
+  }
+  
+  /* Completed Todos */
+  .completed-container {
+    opacity: 0.8;
+  }
+  
+  .completed {
+    background-color: #f9fafb;
+    border-left-color: var(--success-color);
+  }
+  
+  .completed .todo-title {
+    text-decoration: line-through;
+    color: var(--secondary-color);
+  }
+  
+  /* Footer Styles */
+  .site-footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  /* Error Page */
+  .error-page {
+    text-align: center;
+    padding: 4rem 0;
+  }
+  
+  .error-content {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+  
+  .error-content h1 {
+    color: var(--danger-color);
+    margin-bottom: 1rem;
+  }
+  
+  .error-content h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .error-content p {
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .todo-item {
+      flex-direction: column;
+    }
+    
+    .todo-actions {
+      margin-top: 1rem;
+      justify-content: flex-end;
+      width: 100%;
+    }
+  }

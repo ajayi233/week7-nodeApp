@@ -1,0 +1,25 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "A beautiful ToDo application using Node.js and EJS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.782.0",
+    "@aws-sdk/lib-dynamodb": "^3.782.0",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.9",
+    "express": "^4.21.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.13.1",
+    "todo-app": "file:",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
