@@ -11,36 +11,6 @@
     </div>
 
     <!-- Add New Todo Form -->
-    <form action="/todos" method="POST" class="todo-form">
-      <div class="form-group">
-        <input 
-          type="text" 
-          id="title" 
-          name="title" 
-          class="form-control" 
-          placeholder="What needs to be done?" 
-          required
-        >
-      </div>
-      <div class="form-group">
-        <textarea 
-          id="description" 
-          name="description" 
-          class="form-control" 
-          placeholder="Add description (optional)"
-        ></textarea>
-      </div>
-      <div class="form-group">
-        <select id="priority" name="priority" class="form-control">
-          <option value="low">Low Priority</option>
-          <option value="medium" selected>Medium Priority</option>
-          <option value="high">High Priority</option>
-        </select>
-      </div>
-      <div class="form-actions">
-        <button type="submit" class="btn btn-primary">Add Task</button>
-      </div>
-    </form>
     <div class="todo-form-container">
       <form id="todo-form" action="/todos" method="POST" class="todo-form">
         <div class="form-group">
@@ -102,14 +72,11 @@
                   data-todo-priority="<%= todo.priority %>">
                   <i class="fas fa-edit"></i>
                 </button>
-                <form action="/todos/<%= todo.id %>/toggle" method="POST" class="toggle-form">
                 <form action="/todos/<%= todo.id %>/toggle?_method=PATCH" method="POST" class="toggle-form">
                   <button type="submit" class="btn btn-toggle">
                     <i class="icon-circle"></i>
                   </button>
                 </form>
-                <form action="/todos/<%= todo.id %>" method="POST" class="delete-form">
-                  <input type="hidden" name="_method" value="DELETE">
                 <form action="/todos/<%= todo.id %>?_method=DELETE" method="POST" class="delete-form">
                   <button type="submit" class="btn btn-delete">
                     <i class="icon-trash"></i>
@@ -142,14 +109,11 @@
                 </span>
               </div>
               <div class="todo-actions">
-                <form action="/todos/<%= todo.id %>/toggle" method="POST" class="toggle-form">
                 <form action="/todos/<%= todo.id %>/toggle?_method=PATCH" method="POST" class="toggle-form">
                   <button type="submit" class="btn btn-toggle">
                     <i class="icon-check"></i>
                   </button>
                 </form>
-                <form action="/todos/<%= todo.id %>" method="POST" class="delete-form">
-                  <input type="hidden" name="_method" value="DELETE">
                 <form action="/todos/<%= todo.id %>?_method=DELETE" method="POST" class="delete-form">
                   <button type="submit" class="btn btn-delete">
                     <i class="icon-trash"></i>
